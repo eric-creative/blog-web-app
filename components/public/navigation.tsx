@@ -2,7 +2,8 @@ import {ModeToggle} from "@/components/theme/theme-button";
 import {Button} from "@/components/ui/button";
 import {DiscordLogoIcon, GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon} from "@radix-ui/react-icons";
 import Link from "next/link";
-import {FingerprintIcon} from "lucide-react";
+import {FingerprintIcon, SearchIcon} from "lucide-react";
+import {SearchCom} from "@/components/public/search-com";
 
 
 export default function NavigationBar() {
@@ -27,8 +28,10 @@ export default function NavigationBar() {
                     <Link href={'/'}>Blogs</Link>
                     <Link href={'/'}>Tags</Link>
                     <Link href={'/'}>About</Link>
+                    <SearchCom />
+                    <ModeToggle />
                 </div>
-                <ModeToggle />
+
             </div>
         </div>
     )

@@ -6,14 +6,14 @@ import {Button} from "@/components/ui/button";
 
 function RecentBlog() {
     return (
-        <>
+        <div className={'flex flex-col items-center justify-center md:gap-10'}>
             {
                 articles.map((article, idx) => {
                     return (
                         <div
                             key={idx}
-                            className={'md:w-full h-auto p-2 md:p-5 flex flex-col md:flex-row gap-3 justify-between md:items-start'}>
-                            <div className="md:w-[460px] flex justify-center items-center border">
+                            className={'md:w-full h-auto flex flex-col md:flex-row gap-3 justify-between md:items-start'}>
+                            <div className="md:w-[260px] flex justify-center items-center border">
                                 <AspectRatio ratio={8 / 8} className={''}>
                                     <Image src="/images/img02.jpg" fill alt="Image"
                                            className="rounded-md object-cover"/>
@@ -24,16 +24,14 @@ function RecentBlog() {
                                     {
                                         article?.categories?.map((category, index) => {
                                             return (
-
-                                                <Button variant={'outline'} key={'index'}>{category?.name}</Button>
-
+                                                <Button variant={'outline'} size={'sm'} className={'rounded'} key={'index'}>{category?.name}</Button>
                                             )
                                         })
                                     }
                                 </div>
                                 <div className={'h-auto w-full flex flex-col gap-2'}>
                                     <Link href={'/'}>
-                                        <h2 className={'text-3xl md:text-4xl text-ellipsis hover:underline transition-all ease-in-out duration-1000'}>
+                                        <h2 className={'text-xl md:text-3xl text-ellipsis hover:underline transition-all ease-in-out duration-1000'}>
                                             {article?.title}
                                         </h2>
                                     </Link>
@@ -43,7 +41,7 @@ function RecentBlog() {
                     )
                 })
             }
-        </>
+        </div>
     );
 }
 

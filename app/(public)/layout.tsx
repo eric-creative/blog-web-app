@@ -1,11 +1,12 @@
 import type {Metadata} from "next";
 import "../globals.css";
-import {Anek_Gurmukhi as FontSans} from "next/font/google"
+import {Gabarito as FontSans} from "next/font/google"
 import {cn} from "@/lib/utils"
 import {ThemeProvider} from "@/components/theme/theme-provider";
 import NavigationBar from "@/components/public/navigation";
 import React from "react";
 import RecentBlog from "@/components/public/recent-blog";
+import Footer from "@/components/public/footer";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <html lang="en">
         <body
             className={cn(
-                "min-h-screen bg-background font-sans antialiased",
+                "min-h-screen bg-background font-sans antialiased font-extralight",
                 fontSans.variable
             )}
         >
@@ -32,10 +33,13 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             enableSystem
             disableTransitionOnChange
         >
-            <div className={' md:container'}>
+            <div className={' relative'}>
                 <NavigationBar/>
-                <RecentBlog />
-                {children}
+                <div className={'md:container py-20'}>
+                    <RecentBlog />
+                    {children}
+                </div>
+                <Footer />
             </div>
         </ThemeProvider>
         </body>
