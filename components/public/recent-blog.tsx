@@ -1,8 +1,10 @@
+'use client'
 import React from 'react';
 import {AspectRatio} from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import {ReactTyped} from "react-typed";
 
 function RecentBlog() {
     return (
@@ -15,8 +17,12 @@ function RecentBlog() {
                             className={'md:w-full h-auto flex flex-col md:flex-row gap-3 justify-between md:items-start'}>
                             <div className="md:w-[260px] flex justify-center items-center border">
                                 <AspectRatio ratio={8 / 8} className={''}>
-                                    <Image src="/images/img02.jpg" fill alt="Image"
-                                           className="rounded-md object-cover"/>
+                                    <Image
+                                        src="/images/img02.jpg"
+                                        fill
+                                        alt="Image"
+                                        className="rounded-md object-cover"
+                                    />
                                 </AspectRatio>
                             </div>
                             <div className={'md:w-full h-full py-2 md:p-5 flex flex-col gap-3 md:gap-5'}>
@@ -24,7 +30,14 @@ function RecentBlog() {
                                     {
                                         article?.categories?.map((category, index) => {
                                             return (
-                                                <Button variant={'outline'} size={'sm'} className={'rounded'} key={'index'}>{category?.name}</Button>
+                                                <Button
+                                                    variant={'outline'}
+                                                    size={'sm'}
+                                                    className={'rounded'}
+                                                    key={'index'}
+                                                >
+                                                    {category?.name}
+                                                </Button>
                                             )
                                         })
                                     }

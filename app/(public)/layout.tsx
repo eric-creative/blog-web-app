@@ -7,6 +7,9 @@ import NavigationBar from "@/components/public/navigation";
 import React from "react";
 import RecentBlog from "@/components/public/recent-blog";
 import Footer from "@/components/public/footer";
+import HeroSection from "@/components/public/hero-section";
+import Articles from "@/components/public/articles";
+import Brand from "@/components/public/brands";
 
 const fontSans = FontSans({
     subsets: ["latin"],
@@ -33,14 +36,11 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             enableSystem
             disableTransitionOnChange
         >
-            <div className={' relative'}>
+            <>
                 <NavigationBar/>
-                <div className={'md:container py-20'}>
-                    <RecentBlog />
-                    {children}
-                </div>
-                <Footer />
-            </div>
+                { children }
+                <Footer/>
+            </>
         </ThemeProvider>
         </body>
         </html>

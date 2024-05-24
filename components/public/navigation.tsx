@@ -21,13 +21,13 @@ export default function NavigationBar() {
                     <FingerprintIcon size={50} />
                     <div className={'flex flex-col justify-start items-start gap-1'}>
                         <h1 className={'uppercase text-lg md:text-xl tracking-widest'}>electron.</h1>
-                        <p className={'text-xs tracking-wider'}>Codding with Electron</p>
+                        {/*<p className={'text-md '}>Codding with Electron</p>*/}
                     </div>
                 </Link>
-                <div className={'w-full text-sm hidden md:flex justify-end items-center gap-4'}>
-                    <Link href={'/'}>Blogs</Link>
+                <div className={'w-full text-md hidden md:flex justify-end items-center gap-4'}>
+                    <Link href={'/blog'}>Blogs</Link>
                     <Link href={'/'}>Tags</Link>
-                    <Link href={'/'}>About</Link>
+                    <Link href={'/about'}>About</Link>
                     <SearchCom />
                     <ModeToggle />
                 </div>
